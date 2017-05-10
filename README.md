@@ -23,3 +23,34 @@ MLB2016
 # ... with 2,450 more rows
 ```
 
+You could compare how the expected runs change depending on which team is home or away.
+For example
+
+```{r}
+library(tidyverse)
+df <- rbind(
+MLB2016 %>% 
+  filter(TeamName1 == "Toronto Blue Jays",
+         TeamName2 == "Boston Red Sox",
+         StartingPitcher1 == "M ESTRADA",
+         StartingPitcher2 == "R PORCELLO")
+,
+MLB2016 %>% 
+  filter(TeamName2 == "Toronto Blue Jays",
+         TeamName1 == "Boston Red Sox",
+         StartingPitcher2 == "M ESTRADA",
+         StartingPitcher1 == "R PORCELLO")
+)
+
+> df$Lines[[1]]$TotalPoints
+ [1]  NA 9.5 9.5 9.5 9.5 9.5 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0
+[23] 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5
+[45] 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5
+> df$Lines[[2]]$TotalPoints
+ [1]  NA 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 8.5 9.0 9.0 9.0 9.0 9.0
+[23] 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0
+[45] 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0
+[67] 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0 9.0
+[89] 9.0 9.0 9.0 9.0 9.0 9.0
+```
+
