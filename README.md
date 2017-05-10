@@ -3,7 +3,7 @@ devtools::install_github('marcoblume/pinnacle.MLB')
 
 # First steps
 
-`
+```{r}
 library(pinnacle.MLB)
 MLB2016
 
@@ -21,5 +21,5 @@ MLB2016
 9  2016-04-05 02:05:00    Chicago White Sox             Oakland Athletics           C SALE           S GRAY              4              3  <tibble [92 × 9]>
 10 2016-04-05 17:05:00       Houston Astros              New York Yankees        D KEUCHEL          MTANAKA              5              3  <tibble [89 × 9]>
 # ... with 2,450 more rows
-`
+```
 
