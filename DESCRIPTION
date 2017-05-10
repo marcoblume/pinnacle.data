@@ -4,7 +4,7 @@ Title: MLB lines from www.pinnacle.com
 Version: 0.1.0
 Author: Marco Blume
 Maintainer: Marco Blume <marco.blume@pinnaclesports.com>
-Description: Pinnacle is widly recognized ....
+Description: All wagering lines from www.pinnacle.com for the 2016 MLB season. Pinnacle's lines are widely recognized as an accurate representation about the underlying probability of an event. This package can be used for testing sports models on real wagering lines.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -13,4 +13,5 @@ Depends: tibble
 Suggests: 
     odds.converter,
     tidyverse,
-    pinnacle.API
+    pinnacle.API,
+    Lahman

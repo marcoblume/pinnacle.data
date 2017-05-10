@@ -8,9 +8,11 @@
 \describe{
 \item{\code{EventDateTime}}{Time of the game in UTC}
 \item{\code{TeamName1}}{Team name of the Away Team}
-\item{\code{TeamName1}}{Team name of the Home Team}
+\item{\code{TeamName2}}{Team name of the Home Team}
 \item{\code{StartingPitcher1}}{Starting pitcher Away Team}
 \item{\code{StartingPitcher2}}{Starting pitcher Home Team}
+\item{\code{GameScoreTeam1}}{Runs scored by Away Team}
+\item{\code{GameScoreTeam2}}{Runs scored by Home Team}
 \item{\code{EnteredDateTime}}{Time of the wager line in UTC}
 \item{\code{SpreadTeam1}}{Spread Handicap for Away Team}
 \item{\code{SpreadUS1}}{Spread US odds for Away Team}
