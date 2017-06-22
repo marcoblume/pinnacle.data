@@ -1,6 +1,6 @@
-Package: pinnacle.MLB
+Package: pinnacle.data
 Type: Package
-Title: MLB lines from www.pinnacle.com 
+Title: Wagering lines from www.pinnacle.com 
 Version: 0.1.0
 Author: Marco Blume
 Maintainer: Marco Blume <marco.blume@pinnaclesports.com>

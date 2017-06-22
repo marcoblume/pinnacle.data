@@ -1,10 +1,10 @@
 # Installing
-devtools::install_github('marcoblume/pinnacle.MLB')
+devtools::install_github('marcoblume/pinnacle.data')
 
 # First steps
 
 ```{r}
-library(pinnacle.MLB)
+library(pinnacle.data)
 MLB2016
 
 # A tibble: 2,460 × 8
