@@ -58,3 +58,19 @@ MLB2016 %>%
 [89] 9.0 9.0 9.0 9.0 9.0 9.0
 ```
 
+
+US 2016 Presidential Election data is also available now
+
+```{r}
+> data("USA_Election_2016")
+> head(USA_Election_2016)
+# A tibble: 6 × 11
+      EnteredDateTime      TeamName1    TeamName2 SpreadTeam1 SpreadUS1 SpreadUS2 MoneyUS1 MoneyUS2 TotalPoints TotalUSOver TotalUSUnder
+               <dttm>          <chr>        <chr>       <lgl>     <lgl>     <lgl>    <dbl>    <dbl>       <lgl>       <lgl>        <lgl>
+1 2016-07-18 02:34:38 Hilary Clinton Donald Trump          NA        NA        NA     -243      212          NA          NA           NA
+2 2016-07-18 12:15:42 Hilary Clinton Donald Trump          NA        NA        NA     -251      218          NA          NA           NA
+3 2016-07-18 21:49:41 Hilary Clinton Donald Trump          NA        NA        NA     -260      226          NA          NA           NA
+4 2016-07-19 14:48:05 Hilary Clinton Donald Trump          NA        NA        NA     -281      243          NA          NA           NA
+5 2016-07-21 10:47:46 Hilary Clinton Donald Trump          NA        NA        NA     -275      238          NA          NA           NA
+6 2016-07-21 13:09:50 Hilary Clinton Donald Trump          NA        NA        NA     -271      235          NA          NA           NA
+```
