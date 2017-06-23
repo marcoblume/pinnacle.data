@@ -4,6 +4,8 @@
 #'
 #' All wagering lines from Pinnacle for the 2016  MLB season
 #'
+#' @import tibble
+#'
 #' @format A data frame with 14 variables:
 #' \describe{
 #' \item{\code{BaseballRefID}{same format as Retrosheets and BaseballReference data}
