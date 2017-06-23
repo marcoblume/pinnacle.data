@@ -1,10 +1,10 @@
 Package: pinnacle.data
 Type: Package
-Title: Wagering lines from www.pinnacle.com 
-Version: 0.1.0
-Author: Marco Blume
+Title: Market odds data from www.pinnacle.com 
+Version: 0.1.1
+Author: Marco Blume, Michael Yan
 Maintainer: Marco Blume <marco.blume@pinnaclesports.com>
-Description: All wagering lines from www.pinnacle.com for the 2016 MLB season. Pinnacle's lines are widely recognized as an accurate representation about the underlying probability of an event. This package can be used for testing sports models on real wagering lines.
+Description: Market odds from www.pinnacle.com. Included are datasets for the MLB 2016 season and the USA election 2016. These datasets can be used to build models and compare statistical information with the information from prediction markets.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
