@@ -27,6 +27,8 @@ MLB2016
 # ... with 2,450 more rows
 ```
 
+The data is in tibble format with metadata such as time, team names, starting pitchers, etc. In-Game data is stored in tibble format with name "Lines".
+
 You could compare how the expected runs change depending on which team is home or away.
 For example
 
@@ -37,8 +39,8 @@ MLB2016 %>%
   filter(TeamName1 == "Toronto Blue Jays",
          TeamName2 == "Boston Red Sox",
          StartingPitcher1 == "M ESTRADA",
-         StartingPitcher2 == "R PORCELLO")
-,
+         StartingPitcher2 == "R PORCELLO"),
+
 MLB2016 %>% 
   filter(TeamName2 == "Toronto Blue Jays",
          TeamName1 == "Boston Red Sox",
@@ -58,19 +60,47 @@ MLB2016 %>%
 [89] 9.0 9.0 9.0 9.0 9.0 9.0
 ```
 
+# US 2016 Presidential Election Data
 
-US 2016 Presidential Election data is also available now
+US 2016 Presidential Election data is also available now:
 
 ```{r}
-> data("USA_Election_2016")
-> head(USA_Election_2016)
-# A tibble: 6 × 11
-      EnteredDateTime      TeamName1    TeamName2 SpreadTeam1 SpreadUS1 SpreadUS2 MoneyUS1 MoneyUS2 TotalPoints TotalUSOver TotalUSUnder
-               <dttm>          <chr>        <chr>       <lgl>     <lgl>     <lgl>    <dbl>    <dbl>       <lgl>       <lgl>        <lgl>
-1 2016-07-18 02:34:38 Hilary Clinton Donald Trump          NA        NA        NA     -243      212          NA          NA           NA
-2 2016-07-18 12:15:42 Hilary Clinton Donald Trump          NA        NA        NA     -251      218          NA          NA           NA
-3 2016-07-18 21:49:41 Hilary Clinton Donald Trump          NA        NA        NA     -260      226          NA          NA           NA
-4 2016-07-19 14:48:05 Hilary Clinton Donald Trump          NA        NA        NA     -281      243          NA          NA           NA
-5 2016-07-21 10:47:46 Hilary Clinton Donald Trump          NA        NA        NA     -275      238          NA          NA           NA
-6 2016-07-21 13:09:50 Hilary Clinton Donald Trump          NA        NA        NA     -271      235          NA          NA           NA
+# A tibble: 1,443 × 5
+       EnteredDateTime      TeamName1    TeamName2 MoneyUS1 MoneyUS2
+                <dttm>          <chr>        <chr>    <dbl>    <dbl>
+1  2016-07-18 09:34:38 Hilary Clinton Donald Trump     -243      212
+2  2016-07-18 19:15:42 Hilary Clinton Donald Trump     -251      218
+3  2016-07-19 04:49:41 Hilary Clinton Donald Trump     -260      226
+4  2016-07-19 21:48:05 Hilary Clinton Donald Trump     -281      243
+5  2016-07-21 17:47:46 Hilary Clinton Donald Trump     -275      238
+6  2016-07-21 20:09:50 Hilary Clinton Donald Trump     -271      235
+7  2016-07-21 20:36:35 Hilary Clinton Donald Trump     -253      220
+8  2016-07-21 20:37:24 Hilary Clinton Donald Trump     -237      207
+9  2016-07-21 20:49:05 Hilary Clinton Donald Trump     -233      204
+10 2016-07-21 20:55:19 Hilary Clinton Donald Trump     -252      219
+# ... with 1,433 more rows
 ```
+
+Note that we only have monney line prices for this event because outcome of the election is binary.
+
+We can easily plot and track how the prices of Hilary Clinton and DOnald Trump changed:
+
+```{r}
+library(ggplot2)
+
+ggplot(data = USA_Election_2016 %>% filter(EnteredDateTime >='2016-11-08')) +
+  geom_line(alpha = 1, 
+            size = 2,
+            aes(x= EnteredDateTime, 
+                y = MoneyUS1,
+                color = "Hilary Clinton"))+
+  geom_line(alpha = 1, 
+            size = 2,
+            aes(x= EnteredDateTime, 
+                y = MoneyUS2, 
+                color = "Donald Trump")) +
+   theme_bw() +
+  ylab("Price")
+```
+
+![Sample Chart](https://raw.githubusercontent.com/marcoblume/pinnacle.data/master/sampleplot.png)
