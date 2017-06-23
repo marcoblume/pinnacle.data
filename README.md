@@ -5,7 +5,7 @@
 # Installing
 devtools::install_github('marcoblume/pinnacle.data')
 
-# First steps
+# MLB 2016 Data
 
 ```{r}
 library(pinnacle.data)
@@ -83,7 +83,7 @@ US 2016 Presidential Election data is also available now:
 
 Note that we only have monney line prices for this event because outcome of the election is binary.
 
-We can easily plot and track how the prices of Hilary Clinton and DOnald Trump changed:
+We can easily plot and track how the prices of Hilary Clinton and Donald Trump changed:
 
 ```{r}
 library(ggplot2)
@@ -93,13 +93,13 @@ ggplot(data = USA_Election_2016 %>% filter(EnteredDateTime >='2016-11-08')) +
             size = 2,
             aes(x= EnteredDateTime, 
                 y = MoneyUS1,
-                color = "Hilary Clinton"))+
+                color = "Hilary Clinton")) +
   geom_line(alpha = 1, 
             size = 2,
             aes(x= EnteredDateTime, 
                 y = MoneyUS2, 
                 color = "Donald Trump")) +
-   theme_bw() +
+  theme_bw() +
   ylab("Price")
 ```
 
