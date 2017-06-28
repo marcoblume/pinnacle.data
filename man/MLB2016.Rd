@@ -4,7 +4,7 @@
 \name{MLB2016}
 \alias{MLB2016}
 \title{MLB2016.}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2462 rows and 10 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2462 rows and 11 columns.}
 \usage{
 MLB2016
 }
