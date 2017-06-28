@@ -4,8 +4,7 @@ Title: Market odds data from www.pinnacle.com
 Version: 0.1.1
 Author: Marco Blume, Michael Yan
 Maintainer: Marco Blume <marco.blume@pinnaclesports.com>
-Description: Market odds from www.pinnacle.com. Included are datasets for the MLB 2016 season and the USA election 2016. These datasets can be used to build models and compare statistical information with the information from prediction markets. The MLB 2016 dataset can be used for sabermetrics analysis and also can be used in conjunction with the lahman package to analyze the impact of key players on prediction markets
-License: GPL-3
+Description: Market odds from www.pinnacle.com.Included are datasets for the MLB 2016 season and the USA election 2016.These datasets can be used to build models and compare statistical information with the information from prediction markets.The MLB 2016 dataset can be used for sabermetrics analysis and also can be used in conjunction with other popular MLB datasheets such as Retrosheets by merging by GameID.
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
