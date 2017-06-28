@@ -2,18 +2,33 @@
 
 [![CRAN Status Badge](https://www.r-pkg.org/badges/version/pinnacle.data)](https://cran.r-project.org/package=pinnacle.data) [![CRAN Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/pinnacle.data)](https://cran.r-project.org/package=pinnacle.data) [![CRAN Monthly Downloads](http://cranlogs.r-pkg.org/badges/pinnacle.data)](https://cran.r-project.org/package=pinnacle.data)
 
-# Installing
-devtools::install_github('marcoblume/pinnacle.data')
+# pinnacle.data
 
-# General
+These datasets are currently included:
 
-All datasets include the market lines from www.pinnacle.com. Timestamps are in UTC. 
+* MLB2016
+* USA_Election_2016
+
+All datasets include the market lines from www.pinnacle.com for the events and timestamps are in UTC.
+Bettings odds are in the USODDS format that can be transformed  into other formats (e.g. probability) with the use of library(odds.converter).
+
+# Installation
+```{r}
+# Install from Cran (NOT ON CRAN YET)
+#install.packages("pinnacle.data")
+
+# Or the the development version from GitHub:
+# install.packages("devtools")
+devtools::install_github("marcoblume/pinnacle.data")
+```
+
+# Usage
 
 ## MLB 2016 Data
-This dataset contains all wagering lines for the entire MLB 2016 season.
-The data is in tibble format with metadata such as time, team names, starting pitchers, etc. In-Game data is stored in a nest column named "Lines"
+This dataset contains all wagering lines for the entire MLB 2016 season including playoffs.
+The data is in tibble format with metadata such as time, team names, starting pitchers, etc. In-Game data is stored in a nested column named "Lines".
 
-What was the range of expected total runs according to the prediction market at Pinnacle.
+Example question: What was the range of expected total runs according to the prediction market at Pinnacle.
 
 ```{r}
 library(tidyverse)
