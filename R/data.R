@@ -35,6 +35,8 @@
 #'
 #' All lines from Pinnacle for the 2016 US Presidential Election
 #'
+#' @import tibble
+#'
 #' @format A data frame with 12 variables:
 #' \describe{
 #' \item{\code{EnteredDateTime}}{Time of the wager line in UTC}
