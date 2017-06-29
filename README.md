@@ -35,31 +35,96 @@ library(tidyverse)
 
 MLB2016 %>% 
   unnest() %>% 
-  group_by(BaseballRefID) %>% 
-  arrange(desc(EnteredDateTime)) %>% 
+  group_by(GameID) %>% 
+  arrange(desc(EnteredDateTimeUTC)) %>% 
   slice(1) %>% 
-  select(TotalPoints) %>% 
+  ungroup() %>% 
   group_by(TotalPoints) %>% 
   summarize(Count = n())
   
-  # A tibble: 15 x 2
+# A tibble: 16 x 2
    TotalPoints Count
          <dbl> <int>
- 1         6.0    14
- 2         6.5    48
- 3         7.0   168
- 4         7.5   404
- 5         8.0   364
- 6         8.5   440
- 7         9.0   367
- 8         9.5   160
- 9        10.0    73
-10        10.5    40
-11        11.0    22
-12        11.5    10
-13        12.0     7
-14        12.5    12
-15        13.0     2
+ 1         5.5     2
+ 2         6.0    16
+ 3         6.5    54
+ 4         7.0   196
+ 5         7.5   464
+ 6         8.0   421
+ 7         8.5   513
+ 8         9.0   425
+ 9         9.5   180
+10        10.0    74
+11        10.5    46
+12        11.0    24
+13        11.5    18
+14        12.0    11
+15        12.5    15
+16        13.0     3
+```
+Example question: How many games went Over/Under/Landed on the total?
+
+```{r}
+library(tidyverse)
+
+MLB2016 %>% 
+  unnest() %>% 
+  group_by(GameID) %>% 
+  arrange(desc(EnteredDateTimeUTC)) %>% 
+  slice(1) %>% 
+  ungroup() %>% 
+  select(GameID,TotalPoints,FinalScoreAway,FinalScoreHome) %>% 
+  mutate(TotalOutcome = case_when(
+    FinalScoreAway + FinalScoreHome > TotalPoints ~ "Over",
+    FinalScoreAway + FinalScoreHome < TotalPoints ~ "Under",
+    FinalScoreAway + FinalScoreHome == TotalPoints ~ "Landed"
+    )
+) %>% 
+  group_by(TotalPoints,TotalOutcome) %>% 
+  summarize(Count = n()) %>% 
+  print(n=100)
+
+# A tibble: 37 x 3
+# Groups:   TotalPoints [?]
+   TotalPoints TotalOutcome Count
+         <dbl>        <chr> <int>
+ 1         5.5        Under     2
+ 2         6.0         Over     7
+ 3         6.0        Under     9
+ 4         6.5         Over    30
+ 5         6.5        Under    24
+ 6         7.0       Landed    19
+ 7         7.0         Over    91
+ 8         7.0        Under    86
+ 9         7.5         Over   234
+10         7.5        Under   230
+11         8.0       Landed    31
+12         8.0         Over   212
+13         8.0        Under   178
+14         8.5         Over   249
+15         8.5        Under   264
+16         9.0       Landed    52
+17         9.0         Over   186
+18         9.0        Under   187
+19         9.5         Over    84
+20         9.5        Under    96
+21        10.0       Landed     5
+22        10.0         Over    33
+23        10.0        Under    36
+24        10.5         Over    16
+25        10.5        Under    30
+26        11.0       Landed     2
+27        11.0         Over    12
+28        11.0        Under    10
+29        11.5         Over    10
+30        11.5        Under     8
+31        12.0       Landed     2
+32        12.0         Over     4
+33        12.0        Under     5
+34        12.5         Over     7
+35        12.5        Under     8
+36        13.0       Landed     1
+37        13.0         Over     2
 ```
 
 ## US 2016 Presidential Election Data

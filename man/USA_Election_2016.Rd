@@ -4,7 +4,7 @@
 \name{USA_Election_2016}
 \alias{USA_Election_2016}
 \title{USA_Election_2016}
-\format{A data frame with 12 variables:
+\format{A data.frame with 5 variables:
 \describe{
 \item{\code{EnteredDateTime}}{Time of the wager line in UTC}
 \item{\code{TeamName1}}{Team name of the Away Team}
