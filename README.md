@@ -27,7 +27,7 @@ devtools::install_github("marcoblume/pinnacle.data")
 This dataset contains all wagering lines for the entire MLB 2016 season including playoffs.
 The data is in tibble format with metadata such as time, team names, starting pitchers, etc. In-Game data is stored in a nested column named "Lines".
 
-Example question: What was the range of expected total runs according to the prediction market at Pinnacle.
+Example question: What was the range of expected total runs according to the prediction market at Pinnacle?
 
 ```{r}
 library(tidyverse)
