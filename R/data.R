@@ -16,7 +16,7 @@
 #' \item{\code{HomeTeam}}{Team name of the Home Team}
 #' \item{\code{DoubleHeaderGame}}{Indicates if this was a double Header}
 #' \item{\code{AwayStartingPitcher}}{Starting pitcher Away Team}
-#' \item{\code{HomeStartingPicher}}{Starting pitcher Home Team}
+#' \item{\code{HomeStartingPitcher}}{Starting pitcher Home Team}
 #' \item{\code{FinalScoreAway}}{Runs scored by Away Team}
 #' \item{\code{FinalScoreHome}}{Runs scored by Home Team}
 #' \item{\code{EnteredDateTimeUTC}}{Time of the wager line in UTC}
