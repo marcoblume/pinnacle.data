@@ -14,8 +14,8 @@ Bettings odds are in the USODDS format that can be transformed  into other forma
 
 # Installation
 ```{r}
-# Install from Cran (NOT ON CRAN YET)
-#install.packages("pinnacle.data")
+# Install from Cran
+install.packages("pinnacle.data")
 
 # Or the the development version from GitHub:
 # install.packages("devtools")
