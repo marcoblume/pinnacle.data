@@ -21,4 +21,19 @@ US Presidential Election data 2016.
 \details{
 All lines from Pinnacle for the 2016 US Presidential Election
 }
+\examples{
+if (require("tidyverse")) {
+library(tidyverse)
+# What is Hilary Clinton's the highest implied winning probability at Pinnacle?
+
+USA_Election_2016[which.min(USA_Election_2016$MoneyUS1),"EnteredDateTime"]
+odds.converter::odds.us2prob(min(USA_Election_2016$MoneyUS1))
+
+# What time on election night that Trump's implied winning probability surpassed Clinton's?
+
+USA_Election_2016 \%>\% 
+ filter(MoneyUS1>MoneyUS2) \%>\%
+ slice(1)
+}
+}
 \keyword{datasets}

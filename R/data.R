@@ -34,7 +34,7 @@
 #' @examples 
 #' if (require("tidyverse")) {
 #' library(tidyverse)
- #' # What was the range of expected total runs according to the prediction market at Pinnacle?
+#' # What was the range of expected total runs according to the prediction market at Pinnacle?
 #'MLB2016 %>% 
 #'  unnest() %>% 
 #'  group_by(GameID) %>% 
@@ -80,5 +80,20 @@
 #' \item{\code{TeamName2}}{Team name of the Home Team}
 #' \item{\code{MoneyUS1}}{Moneyline US odds for Away Team}
 #' \item{\code{MoneyUS2}}{Moneyline US odds for Home Team}
+#' }
+#' 
+#' @examples 
+#' if (require("tidyverse")) {
+#' library(tidyverse)
+#' # What is Hilary Clinton's the highest implied winning probability at Pinnacle?
+#' 
+#' USA_Election_2016[which.min(USA_Election_2016$MoneyUS1),"EnteredDateTime"]
+#' odds.converter::odds.us2prob(min(USA_Election_2016$MoneyUS1))
+#' 
+#' # What time on election night that Trump's implied winning probability surpassed Clinton's?
+#' 
+#' USA_Election_2016 %>% 
+#'  filter(MoneyUS1>MoneyUS2) %>%
+#'  slice(1)
 #' }
 "USA_Election_2016"
