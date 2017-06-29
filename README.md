@@ -1,3 +1,4 @@
+<div style='position:relative;float:right;'><img src='r-pinnacle-data-sm.png'></div>
 
 [![CRAN Status Badge](https://www.r-pkg.org/badges/version/pinnacle.data)](https://cran.r-project.org/package=pinnacle.data) [![CRAN Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/pinnacle.data)](https://cran.r-project.org/package=pinnacle.data) [![CRAN Monthly Downloads](http://cranlogs.r-pkg.org/badges/pinnacle.data)](https://cran.r-project.org/package=pinnacle.data)
 
